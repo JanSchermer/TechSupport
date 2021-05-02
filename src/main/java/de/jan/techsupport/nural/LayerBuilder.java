@@ -10,7 +10,7 @@ public class LayerBuilder {
   static final Activation DEFAULT_ACTIVATION = Activation.RELU;
   static final WeightInit DEFAULT_WEIGHT = WeightInit.XAVIER;
   static final Activation OUTPUT_ACTIVATION = Activation.SOFTMAX;
-  static final LossFunctions.LossFunction OUTPUT_LOSS = LossFunctions.LossFunction.SPARSE_MCXENT;
+  static final LossFunctions.LossFunction OUTPUT_LOSS = LossFunctions.LossFunction.MCXENT;
 
   Activation activation;
   int inputN, outputN, hiddenN;
@@ -20,6 +20,7 @@ public class LayerBuilder {
   public LayerBuilder(int inputN, int outputN, int hiddenN) {
     this.inputN = inputN;
     this.outputN = outputN;
+    this.hiddenN = hiddenN;
     init();
   }
 

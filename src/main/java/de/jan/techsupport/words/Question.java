@@ -10,12 +10,7 @@ public class Question {
   public Question(String tag, List<String> patterns, List<String> responses) {
     this.tag = tag;
     this.responses = responses;
-    storePatterns(patterns);
-  }
-
-  void storePatterns(List<String> patterns) {
-    Pattern pattern = new Pattern();
-    this.patterns = pattern.filter(patterns);
+    this.patterns = patterns;
   }
 
   public String getTag() {

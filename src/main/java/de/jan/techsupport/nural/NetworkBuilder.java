@@ -7,7 +7,8 @@ import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.nd4j.linalg.learning.config.Adam;
 
 public class NetworkBuilder {
-  final static double DEFAULT_LEARN_RATE = .25;
+  final static int DEAFAULT_BATCH_SIZE = 5;
+  final static double DEFAULT_LEARN_RATE = .01;
   final static int DEFAULT_HIDDEN_NEURONS = 16;
 
   int inputN, outputN;
