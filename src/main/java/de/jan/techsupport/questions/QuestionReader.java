@@ -1,4 +1,4 @@
-package de.jan.techsupport.words;
+package de.jan.techsupport.questions;
 
 import java.io.File;
 import java.io.FileInputStream;

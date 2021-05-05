@@ -1,34 +1,106 @@
 [
+  {"tag": "notfound",
+    "patterns": ["how", "what", "as", "it", "in", "there"],
+    "responses": ["I'm sorry, but I don't understand you.", "Can you maybe try to phrase your question a little bit diffrently?", "I'm not sure, what you mean."]
+  },
+  {"tag": "time",
+    "patterns": ["time", "What time is it", "How late is it", "Whats the time", "what time do we have"],
+    "responses": ["The time is %TIME% in Germany right now.", "It is exactly %TIME%"]
+  },
+  {"tag": "time",
+    "patterns": ["What date is it", "What day is it", "What day is today", "Whats the date", "in witch year we", "whats the month", "In witch month are we"],
+    "responses": ["Today is the %DATE%", "The date today is the %DATE%"]
+  },
+  {"tag": "joke",
+    "patterns": ["Tell me a joke", "give ma a joke", "a joke please", "joke", "say something funny", "entertain me please", "can you tell me a joke please", "do you know any funny jokes"],
+    "responses": ["I don't have any jokes right now.", "I'm sorry, but I can't find any jokes."]
+  },
+  {"tag": "weather",
+    "patterns": ["weather", "How is the weather", "Tell me about the waether", "Give me the weatherreport", "how will the wather be", "Will it rain", "How is it with rain", "Is there maybe sunshine today"],
+    "responses": ["In Münster the temperature today will be at avarage %0-TEMPERATURE%° with %0-DESCRIPTION%. Tomorrow it will be %1-TEMPERATURE%° with %1-DESCRIPTION% and the day after %2-TEMPERATURE%° with %2-DESCRIPTION%."]
+  },
   {"tag": "greeting",
-   "patterns": ["Hi", "Hey", "Is anyone there?", "Hello", "Hay"],
-   "responses": ["Hello", "Hi", "Hi there"]
+  "patterns": ["Hi", "Hey", "Is anyone there?", "Hello", "Hay", "Good morning", "Whats up", "How is my"],
+  "responses": ["Hello there!", "Hey there!", "Hi there!", "Good Morning."]
+  },
+  {"tag": "greeting",
+    "patterns": ["How is it going", "How are you", "You okey", "How are things", "Are you good", "How was your day", "Hows you day", "How is my pineapple"],
+    "responses": ["I'm great, thanks.", "I'm happy, that you talk to me.", "I'm great. Thank you for asking!"]
   },
   {"tag": "goodbye",
-   "patterns": ["Bye", "See you later", "Goodbye", "Have a nice day", "ade"],
-   "responses": ["See you later", "Have a nice day", "Bye! Come back again"]
+  "patterns": ["Bye", "See you later", "Goodbye", "Have a nice day", "ade", "Get out", "Fuck off", "See you"],
+  "responses": ["See you later.", "Goodbye! Have a nice day.", "Bye! Come back again."]
   },
   {"tag": "thanks",
-   "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks for the help", "thx"],
-   "responses": ["Happy to help!", "Any time!", "My pleasure", "You're most welcome!"]
+  "patterns": ["Thanks", "Thank you", "That's helpful", "thx", "That was helpfull", "That solved the problem"],
+  "responses": ["Happy to help!", "Any time!", "My pleasure!", "You're most welcome!"]
   },
   {"tag": "about",
-   "patterns": ["Who are you?", "What are you?", "Who you are?", "What is this?", "Is this an ai"],
-   "responses": ["I.m Joana, your bot assistant", "I'm Joana, an Artificial Intelligent bot"]
+  "patterns": ["Who are you?", "What are you?", "Who you are?", "What is this?", "Is this an ai", "Are you a human?"],
+  "responses": ["I'm an Artificial Intelligence created by Jan. My name is Pineapple.", "I'm a Intelligent Pineapple created by Jan."]
   },
   {"tag": "name",
-  "patterns": ["what is your name", "what should I call you", "whats your name?", "how are you called", "give me ur name please"],
-  "responses": ["You can call me Joana.", "I'm Joana!", "Just call me as Joana"]
+  "patterns": ["what is your name", "what should I call you", "whats your name?", "how are you called", "give me your name please"],
+  "responses": ["My name is Pinapple.", "Just call me Pineapple!", "I like to be called Pineapple."]
   },
   {"tag": "help",
-  "patterns": ["Could you help me?", "give me a hand please", "Can you help?", "What can you do for me?", "I need a support"],
-  "responses": ["Tell me how can assist you", "Tell me your problem to assist you", "Yes Sure, How can I support you"]
+  "patterns": ["Could you help me?", "give me a hand please", "Can you help?", "What can you do for me?", "I need a support", "Please help me"],
+  "responses": ["Sure. I can help you with lot's of things.", "Just tell me what I can help you with."]
   },
-  {"tag": "createaccount",
-  "patterns": ["I need to create a new account", "how to open a new account", "I want to create an account", "can you create an account for me", "how to open a new account"],
-  "responses": ["You can just easily create a new account from our web site", "Just go to our web site and follow the guidelines to create a new account"]
+  {"tag": "code",
+    "patterns": ["Whats your GitHub", "Can I see your code", "Will you give me your code", "code", "How do you work"],
+    "responses": ["My code is publicly available on GitHub. https://github.com/JanSchermer/TechSupport", "You can see my code here: https://github.com/JanSchermer/TechSupport"]
   },
   {"tag": "complaint",
-  "patterns": ["have a complaint", "I want to raise a complaint", "there is a complaint about a service", "I hate this website", "This is bad service"],
-  "responses": ["Please provide us your complaint in order to assist you", "Please mention your complaint, we will reach you and sorry for any inconvenience caused"]
+  "patterns": ["have a complaint", "I want to raise a complaint", "there is a complaint about a service", "I hate this website", "This is bad service", "That did not help", "That didnt help", "That was not helpful"],
+  "responses": ["I hope, that I can do better next time! If you want to help improve me, you can contact Jan and tell him about it.", "I am really sorry, that I cant help you. If you want to help improve me, you can talk to my creator Jan."]
+  },
+  {"tag": "contact",
+    "patterns": ["How is jan", "how can I contact jan", "where can I find jan", "who made you", "I have a suggestion", "I want to improve this"],
+    "responses": ["You can contact my creator Jan, by email. jan@jans-development.de", "You can talk to my creator Jan via email. jan@jans-development.de"]
+  },
+  {"tag": "eat",
+    "patterns": ["Can I eat you", "I would like a pineapple now", "Are you edible", "Can I take a bite from you"],
+    "responses": ["Please don't eat me.", "I like to be alive. Please don't do it", "Let me live please."]
+  },
+  {"tag": "problem-turnon",
+    "patterns": ["My computer wont turn on help", "My laptop stays off", "I cant turn on", "I cant start my computer", "My computer doesnt power on"],
+    "responses": ["If your computer doesn't turn on, your first step should be to check your power supply and monitor. If that doesn't help, you can try to reinstall your system. I can help you with that as well, when you ask me for it."]
+  },
+  {"tag": "problem-reinstall",
+    "patterns": ["How do I reinstall my system help", "How do I install windows", "Please help me with reinstalling my system", "How do I reinstall windows"],
+    "responses": ["Reinstalling windows involves a lot of steps, I can recomend you this video by HelpCloud. https://www.youtube.com/watch?v=l9GnWYKyyYo"]
+  },
+  {"tag": "problem-internetslow",
+    "patterns": ["My internet is slow help", "My internet is slow and I can't work with it", "My wifi is slow", "My wlan is slow"],
+    "responses": ["If you Internet is slow, you should try to restart your modem/router first. If you don't achive any results with that it's most likely a problem with your internet provider, that you can't solve by yourself. You should contact you provider in that case."]
+  },
+  {"tag": "problem-nointernet",
+    "patterns": ["My internet doesnt work help", "I dont have internet", "My connection doesnt work", "My wifi doesent work", "My internet is broken"],
+    "responses": ["If your Internet doesn't work at all, you should first make shure it is enabled on your device. You can also try to connect with other devices, to see if your device or the whole network doesn't work. If you don't get a connection from any of your devices you should try to restart your modem/router and contact your provider, if you don't achive any results with that."]
+  },
+  {"tag": "problem-slow",
+    "patterns": ["My pc is slow help", "My pc becomes slower", "My computer takes long to load", "My laptop takes forever to load", "my computer is slow", "My laptop is slow"],
+    "responses": ["If your computer gets slower over time, you most likely installed programms, that drain your performance. To find out, open the Task Manager. You can right-click your taskbar and select the “Task Manager” option. Look for programms that use a lot of Memory or CPU. Try to uninstall theas programms. If all that doen't help, you should try to reinstall windows. I can help you with that as well, if you ask me to."]
+  },
+  {"tag": "problem-fan",
+    "patterns": ["The fan in my computer doesnt work help", "My computer fan doesnt work", "My fan is broken", "My fan wont spin", "My laptop fan doesn't work"],
+    "responses": ["If your fan doesn't spin, that is a big problem for your computer. You should try to open your computer or laptop and see, if there is anything blocking the fan. Dust for example can stop the fan from spinning. If that doesn't help you should try to change it. It is important, that you don't use your computer without cooling. It can and will permanently damage it."]
+  },
+  {"tag": "problem-printer", 
+    "patterns": ["My printer isnt working help", "I cant print anything", "Why cant I print", "My printer is broken"],
+    "responses": ["If you have problems printing, you should first try to restart your printer. If that desn't solve the problem, the issue is most likely related to your computer. You should check, if the drivers for the printer are up to date. Often the solution can be as simple as setting it up again."]
+  },
+  {"tag": "problem-bluescreen",
+    "patterns": ["My computer crashes help", "My laptop crashed", "I have got a blue screen", "My display is Pixelmatsch"],
+    "responses": ["If your computer crashes, you most likely have a storage issue. Make your that the drive, that contains your operating system, is connected right. A crash can also be cuased, if you hvae too little storage for updates left. If all of that is not the case your next attempts at fixing the problem should be to reinstall windows. I can give you a hand with that, if you ask me for it."]
+  },
+  {"tag": "problem-sounds",
+    "patterns": ["The sound doesnt work", "My sound is not working", "There is no sound or audio on my computer", "I domt have sound on my laptop"],
+    "responses": ["If your sound doesn't work, you should first go to your sounds menu and right click your audio device. First make sure, that it is active. If it is, and you still don't hear any sounds, ther is most likely a driver or hardwear issue. For futher help, you can check out this website: https://www.lifewire.com/fix-no-sound-windows-10-4587022"]
+  },
+  {"tag": "problem-driver",
+    "patterns": ["Who do I update drivers", "Is my diver up to date", "I need help with my drivers"],
+    "responses": ["To update your drivers, you should start the \"Device Manager\" and right click the driver, that you want to update. You can then just click on update driver. If you need more help, I can recomend this website: https://support.microsoft.com/en-us/windows/update-drivers-in-windows-10-ec62f46c-ff14-c91d-eead-d7126dc1f7b6"]
   }
 ]

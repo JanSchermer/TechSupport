@@ -9,8 +9,7 @@ import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
 import org.nd4j.linalg.factory.Nd4j;
 
-import de.jan.techsupport.words.Question;
-import de.jan.techsupport.words.WordBag;
+import de.jan.techsupport.questions.Question;
 
 public class NetworkTrainer {
   MultiLayerNetwork network;
@@ -27,6 +26,7 @@ public class NetworkTrainer {
     train(epochs, false);
   }
   public void train(int epochs, boolean log) {
+    levelPatterns(questions);
     DataSet dataset = createSet();
     DataSetIterator iter = createIterator(dataset);
     for(int epoch = 0; epoch < epochs; epoch++) {
@@ -34,6 +34,37 @@ public class NetworkTrainer {
         System.out.println("Training network... Epoch: "+(epoch + 1)+" / "+epochs);
       network.fit(iter);
     }
+  }
+
+  void levelPatterns(List<Question> questions) {
+    int maxPatterns = getMaxPatterns(questions);
+    addPatterns(questions, maxPatterns);
+  }
+
+  int getMaxPatterns(List<Question> questions) {
+    int maxPatterns = 0;
+    for(Question question : questions) { 
+      List<String> patterns = question.getPatterns();
+      if(maxPatterns < patterns.size())
+        maxPatterns = patterns.size();
+    }
+    return maxPatterns;
+  }
+
+  void addPatterns(List<Question> questions, int target) {
+    for(Question question : questions) {
+      int patterns = question.getPatterns().size();
+      addPatterns(question, target - patterns);
+    }
+  }
+  int addPatterns(Question question, int count) {
+    List<String> patterns = question.getPatterns();
+    int patternCount = patterns.size();
+    if(patternCount >= count) return 0;
+    int index = addPatterns(question, --count);
+    String pattern = patterns.get(index);
+    patterns.add(pattern);
+    return index + 1;
   }
 
   DataSetIterator createIterator(DataSet set) {

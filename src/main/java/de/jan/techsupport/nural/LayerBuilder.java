@@ -7,7 +7,7 @@ import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 public class LayerBuilder {
-  static final Activation DEFAULT_ACTIVATION = Activation.RELU;
+  static final Activation DEFAULT_ACTIVATION = Activation.SIGMOID;
   static final WeightInit DEFAULT_WEIGHT = WeightInit.XAVIER;
   static final Activation OUTPUT_ACTIVATION = Activation.SOFTMAX;
   static final LossFunctions.LossFunction OUTPUT_LOSS = LossFunctions.LossFunction.MCXENT;
