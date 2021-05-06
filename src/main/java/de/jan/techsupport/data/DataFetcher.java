@@ -10,9 +10,10 @@ public abstract class DataFetcher {
     DEFAULTS.add(new JokeFetcher());
     DEFAULTS.add(new TimeFetcher());
     DEFAULTS.add(new WeatherFetcher());
+    DEFAULTS.add(new KnowledgeFetcher());
   }
 
-  public abstract String process(String input);
+  public abstract String process(String output, String input);
   public abstract String[] getTags();
 
   public boolean handles(String tag) {

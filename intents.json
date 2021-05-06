@@ -1,6 +1,6 @@
 [
   {"tag": "notfound",
-    "patterns": ["how", "what", "as", "it", "in", "there"],
+    "patterns": ["how", "what", "as", "it", "in", "there", "who", "is", "on", "was", "where", "when", "are"],
     "responses": ["I'm sorry, but I don't understand you.", "Can you maybe try to phrase your question a little bit diffrently?", "I'm not sure, what you mean."]
   },
   {"tag": "time",

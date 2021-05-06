@@ -22,11 +22,11 @@ public class JokeFetcher extends DataFetcher {
   }
 
   @Override
-  public String process(String input) {
-    return fetchJoke(input);
+  public String process(String output, String input) {
+    return fetchJoke(output);
   }
   
-  public String fetchJoke(String input) {
+  String fetchJoke(String output) {
     try {
       URL url = new URL(JOKE_API_DOMAIN);
       HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -39,7 +39,7 @@ public class JokeFetcher extends DataFetcher {
       return joke;
     } catch (Exception e) {
       e.printStackTrace();
-      return input;
+      return output;
     }
   }
 

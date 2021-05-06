@@ -43,7 +43,7 @@ public class DiscordBot extends ListenerAdapter {
     if(channel.getType() != ChannelType.PRIVATE) return;
     String input = e.getMessage().getContentDisplay();
     Question question = classifier.classify(input);
-    String response = question.getResponse();
+    String response = question.getResponse(input);
     MessageAction action = channel.sendMessage(response);
     System.out.println("[Discord] "+author.getName()+" > "+input);
     System.out.println("[Discord] "+question.getTag()+" > "+response+"\n");

@@ -21,11 +21,11 @@ public class Question {
     rand = new Random();
   }
 
-  public String getResponse() {
+  public String getResponse(String input) {
     int index = rand.nextInt(responses.size());
     String response = responses.get(index);
     for(DataFetcher fetcher : fetchers)
-      response = fetcher.process(response);
+      response = fetcher.process(response, input);
     return response;
   }
 

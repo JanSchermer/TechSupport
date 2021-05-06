@@ -11,17 +11,17 @@ public class TimeFetcher extends DataFetcher {
   }
   
   @Override
-  public String process(String input) {
+  public String process(String output, String input) {
     String timeFormat = "HH:mm:ss";
     String dateFormat = "dd.MM.yyyy";
     String time = getCurrentTimeStamp(timeFormat);
     String date = getCurrentTimeStamp(dateFormat);
-    input = input.replaceAll("%TIME%", time);
-    input = input.replaceAll("%DATE%", date);
-    return input;
+    output = output.replaceAll("%TIME%", time);
+    output = output.replaceAll("%DATE%", date);
+    return output;
   }
 
-  public String getCurrentTimeStamp(String format) {
+  String getCurrentTimeStamp(String format) {
     SimpleDateFormat sdfDate = new SimpleDateFormat(format);
     Date now = new Date();
     String strDate = sdfDate.format(now);

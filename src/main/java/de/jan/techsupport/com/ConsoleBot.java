@@ -32,7 +32,7 @@ public class ConsoleBot {
     String line = reader.readLine();
     Question classification = classifier.classify(line);
     String tag = classification.getTag();
-    String response = classification.getResponse();
+    String response = classification.getResponse(line);
     System.out.println("[Console] "+tag+" > "+response+"\n");
   }
 

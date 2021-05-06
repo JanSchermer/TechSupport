@@ -31,14 +31,14 @@ public class WeatherFetcher extends DataFetcher {
   }
 
   @Override
-  public String process(String input) {
+  public String process(String output, String input) {
     JsonArray data = fetchData();
     for(int day = 0; day < 7; day++)
-      input = replaceDay(input, data, day);
-    return input;
+      output = replaceDay(output, data, day);
+    return output;
   }
 
-  public String replaceDay(String response, JsonArray data, int day) {
+  String replaceDay(String response, JsonArray data, int day) {
     JsonObject weather = getWeather(day, data);
     for(String value : WEATHER_VALUES) {
       String pattern = "%"+day+"-"+value+"%";
@@ -50,7 +50,7 @@ public class WeatherFetcher extends DataFetcher {
     return response;
   }
 
-  public JsonObject getWeather(int dayIndex, JsonArray data) {
+  JsonObject getWeather(int dayIndex, JsonArray data) {
     JsonObject day = data.get(dayIndex).getAsJsonObject();
     JsonObject temp = day.get("temp").getAsJsonObject();
     String temperature = temp.get("day").getAsString();
@@ -60,7 +60,7 @@ public class WeatherFetcher extends DataFetcher {
     return weather;
   }
 
-  public JsonArray fetchData() {
+  JsonArray fetchData() {
     try {
       URL url = new URL(WEATHER_API_DOMAIN);
       HttpURLConnection con = (HttpURLConnection) url.openConnection();
