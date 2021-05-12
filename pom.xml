@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>de.jan</groupId>
-  <artifactId>TechSupport</artifactId>
+  <artifactId>Pineapple</artifactId>
   <version>1.2</version>
 
-  <name>TechSupport</name>
+  <name>Pineapple</name>
   <url>https://github.com/JanSchermer/TechSupport</url>
 
   <properties>
