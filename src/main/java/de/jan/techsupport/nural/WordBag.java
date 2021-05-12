@@ -7,15 +7,15 @@ import de.jan.techsupport.questions.Question;
 import opennlp.tools.stemmer.PorterStemmer;
 
 public class WordBag {
-  Pattern pattern;
+  Filter filter;
   List<String> words;
 
   public WordBag(List<Question> questions) {
-    pattern = new Pattern();
+    filter = new Filter();
     words = new ArrayList<String>();
     for(Question question : questions) {
       List<String> patterns = question.getPatterns();
-      patterns = this.pattern.filter(patterns);
+      patterns = filter.filter(patterns);
       addPatterns(patterns);
     }
   }
@@ -38,7 +38,7 @@ public class WordBag {
   public float[] getMap(String input) {
     float[] map = empty(words.size());
     if(input == null || input.length() == 0) return map;
-    input = pattern.filter(input);
+    input = filter.filter(input);
     String[] data = input.split(" ");
     for(String word : data)
       if(words.contains(word))
@@ -53,12 +53,12 @@ public class WordBag {
     return empty;
   }
   
-  public static class Pattern {
+  public static class Filter {
     public static String[] blackList = {"pineapple"};
 
     PorterStemmer stemmer;
   
-    public Pattern() {
+    public Filter() {
       stemmer = new PorterStemmer();
     }
   

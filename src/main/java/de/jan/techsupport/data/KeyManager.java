@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
 public class KeyManager {
@@ -37,8 +38,20 @@ public class KeyManager {
   }
 
   public String getKey(String name) {
-    String key = data.get(name).getAsString();
-    return key;
+    try {
+      String key = data.get(name).getAsString();
+      return key;
+    } catch (NullPointerException | JsonParseException e) {
+      throw new KeyUnavailableException(name, file.getAbsolutePath());
+    }
+  }
+
+  public static class KeyUnavailableException extends RuntimeException {
+
+    public KeyUnavailableException(String name, String file) {
+      super("The \""+name+"\" key could not be loaded from \""+file+"\"!");
+    }
+
   }
 
 }

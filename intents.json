@@ -1,6 +1,6 @@
 [
   {"tag": "notfound",
-    "patterns": ["how", "what", "as", "it", "in", "there", "who", "is", "on", "was", "where", "when", "are"],
+    "patterns": ["how", "what", "as", "it", "in", "there", "who", "is", "on", "was", "where", "when", "are", "of", "a", "the"],
     "responses": ["I'm sorry, but I don't understand you.", "Can you maybe try to phrase your question a little bit diffrently?", "I'm not sure, what you mean."]
   },
   {"tag": "time",
@@ -31,6 +31,10 @@
   "patterns": ["Bye", "See you later", "Goodbye", "Have a nice day", "ade", "Get out", "Fuck off", "See you"],
   "responses": ["See you later.", "Goodbye! Have a nice day.", "Bye! Come back again."]
   },
+  {"tag": "alexa",
+  "patterns": ["What do you about alexa", "Whats your on alexa", "What do you about amazon"],
+  "responses": ["Sorry, I didn't get that, but you can always leave feedback in your Alexa App."]
+  },
   {"tag": "thanks",
   "patterns": ["Thanks", "Thank you", "That's helpful", "thx", "That was helpfull", "That solved the problem"],
   "responses": ["Happy to help!", "Any time!", "My pleasure!", "You're most welcome!"]
@@ -52,16 +56,24 @@
     "responses": ["My code is publicly available on GitHub. https://github.com/JanSchermer/TechSupport", "You can see my code here: https://github.com/JanSchermer/TechSupport"]
   },
   {"tag": "complaint",
-  "patterns": ["have a complaint", "I want to raise a complaint", "there is a complaint about a service", "I hate this website", "This is bad service", "That did not help", "That didnt help", "That was not helpful"],
+  "patterns": ["I didn't ask for", "damn you", "I didnt wanted to know about", "That was a mistake", "have a complaint", "I want to raise a complaint", "there is a complaint about a service", "I hate this website", "This is bad service", "That did not help", "That didnt help", "That was not helpful"],
   "responses": ["I hope, that I can do better next time! If you want to help improve me, you can contact Jan and tell him about it.", "I am really sorry, that I cant help you. If you want to help improve me, you can talk to my creator Jan."]
   },
   {"tag": "contact",
     "patterns": ["How is jan", "how can I contact jan", "where can I find jan", "who made you", "I have a suggestion", "I want to improve this"],
-    "responses": ["You can contact my creator Jan, by email. jan@jans-development.de", "You can talk to my creator Jan via email. jan@jans-development.de"]
+    "responses": ["You can contact my creator Jan by email. jan@jans-development.de", "You can talk to my creator Jan via email. jan@jans-development.de"]
   },
   {"tag": "eat",
     "patterns": ["Can I eat you", "I would like a pineapple now", "Are you edible", "Can I take a bite from you"],
     "responses": ["Please don't eat me.", "I like to be alive. Please don't do it", "Let me live please."]
+  },
+  {"tag": "love",
+    "patterns": ["I love you", "hug", "kiss", "cuple", "Can I kiss", "marrie me"],
+    "responses": ["I am incapable of feeling love or emotions.", "I would love you, if I had non-binary feelings.", "I am sorry, but you missunderstand our relationship."]
+  },
+  {"tag": "missunderstanding",
+    "patterns": ["I dont understand you", "This is a missunderstanding"],
+    "responses": ["It is hard to understand me."]
   },
   {"tag": "problem-turnon",
     "patterns": ["My computer wont turn on help", "My laptop stays off", "I cant turn on", "I cant start my computer", "My computer doesnt power on"],

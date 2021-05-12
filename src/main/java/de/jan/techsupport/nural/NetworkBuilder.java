@@ -8,7 +8,7 @@ import org.nd4j.linalg.learning.config.Adam;
 
 public class NetworkBuilder {
   final static int DEAFAULT_BATCH_SIZE = 5;
-  final static double DEFAULT_LEARN_RATE = .002;
+  final static double DEFAULT_LEARN_RATE = .004;
   final static int DEFAULT_HIDDEN_NEURONS = 16;
 
   int inputN, outputN;
